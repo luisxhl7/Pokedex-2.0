@@ -4,16 +4,23 @@
 .pokemon{
     color: #000000;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: #2f2f2f;
     height: 100vh;
-    
+    @include FromMax(580px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__card-info{
         background-image: url(../../../assets/pokeball.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: -130px -150px;
         padding: 30px 0px;
-        margin: auto;
+        margin-top:  30px;
         width: 100%;
         max-width: 400px;
         background-color: #bd1212;
@@ -22,12 +29,14 @@
         align-items: center;
         justify-content: center;
         border-radius: 15px;
-        @include FromMin($medium) {
+        @include FromMin($large) {
+            margin: 0px;
             max-width: 900px;
             height: 500px;
             flex-direction: row;
             justify-content: space-evenly
         }
+
         &__section-1{
             background-color: #ffffffe0;
             width: 90%;
@@ -36,13 +45,13 @@
             align-items: center;
             justify-content: center;
             border-radius: 15px;
-            @include FromMin($medium) {
+            @include FromMin($large) {
                 max-width: 350px;
             }
             & img{
                 width: 250px;
                 height: 250px;
-                @include FromMin($medium) {
+                @include FromMin($large) {
                     width: 350px;
                     height: 350px;
                 }
@@ -89,5 +98,30 @@
                 color: #ffffff;
             }
         }
+    }
+    &__button{
+        display: none;
+        @include FromMin(580px) {
+            display: block;
+            background-color: transparent;
+            color: #ffffff;
+            & svg{
+                font-size: 50px;
+            }
+        }
+    }
+    &__button-mobile{
+        display: block;
+        background-color: transparent;
+        color: #ffffff;
+        & svg{
+            font-size: 50px;
+        }
+        @include FromMin(580px) {
+            display: none;
+        }
+    }
+    &__content-buttons{
+        display: flex;
     }
 }

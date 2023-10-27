@@ -5,11 +5,11 @@ import pokeball from '../../../assets/pokeball.png'
 import './CardPokemon.scss'
 
 export const CardPokemon = ({name, url, id}) => {
-  const [pokemon, setPokemon] = useState()
+  const [pokemon, setPokemon] = useState();
 
   const getPokemon = async() => {
     try {
-      const result  = await axios.get(url)
+      const result  = await axios.get(url ? url: `https://pokeapi.co/api/v2/pokemon/${id}/`)
       setPokemon(result.data)
 
     } catch (error) {
