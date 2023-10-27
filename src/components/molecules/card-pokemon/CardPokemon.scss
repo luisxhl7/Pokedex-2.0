@@ -10,7 +10,20 @@
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
+    &:hover{
+        & img{
+            filter: none;
+        }
+    }
+    & img{
+        filter: brightness(0%) saturate(100%) contrast(100%) opacity(100%) grayscale(100%) sepia(0%) hue-rotate(0deg);
+        transition: filter 0.5s;
+    }
     & h2{
         text-align: center;
+    }
+    a{
+        text-decoration: none;
+        color: #ffffff;
     }
 }

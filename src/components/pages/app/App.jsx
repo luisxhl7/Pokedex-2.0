@@ -1,10 +1,10 @@
+import { AppRouter } from "../../../routers/AppRouter";
 import { PageLogaut } from "../../templates/page-logaut";
-import { ListPokemons } from "../list-pokemons";
 
 export const App = () => {
   return (
     <PageLogaut>
-      <ListPokemons/>
+      <AppRouter/>
     </PageLogaut>
   );
 }

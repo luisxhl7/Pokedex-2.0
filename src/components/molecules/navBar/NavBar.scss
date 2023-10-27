@@ -1,5 +1,5 @@
 .navbar{
-    background-color: red;
+    background-color: #bd1212;
     width: 100%;
     height: 60px;
     position: fixed;
@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
+    z-index: 99;
     & img{
         margin: 0px 10px;
     }

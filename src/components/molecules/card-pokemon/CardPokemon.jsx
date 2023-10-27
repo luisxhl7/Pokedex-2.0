@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import pokeball from '../../../assets/pokeball.png'
 import './CardPokemon.scss'
 
 export const CardPokemon = ({name, url, id}) => {
   const [pokemon, setPokemon] = useState()
-  console.log(pokemon)
+
   const getPokemon = async() => {
     try {
       const result  = await axios.get(url)
@@ -19,13 +20,12 @@ export const CardPokemon = ({name, url, id}) => {
 
   useEffect(() => {
     getPokemon()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name])
   
-
-
-
   return (
     <div className='cardPokemon'>
+      <Link to={`/pokemon/${name}`}>
         <h2>
           # {pokemon?.order}
           <br />
@@ -40,6 +40,7 @@ export const CardPokemon = ({name, url, id}) => {
             pokeball
             } alt="" width={150} height={150}/>
         </figure>
+      </Link>
     </div>
   )
 }

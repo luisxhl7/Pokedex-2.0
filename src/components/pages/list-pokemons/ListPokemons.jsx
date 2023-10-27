@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { CardPokemon } from '../../molecules/card-pokemon'
 import './ListPokemons.scss'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export const ListPokemons = () => {
+  const {page} = useParams()
   const [pokemons, setPokemons] = useState()
-  const [numberPage, setNumberPage] = useState(1)
+  const [numberPage, setNumberPage] = useState(page)
   const [totalPage, setTotalPage] = useState()
-  
+  const navigate = useNavigate();
+
   const getPokemons = async(pageNumber) => {
     try {
       const offset = (pageNumber - 1 ) * 100;
@@ -22,31 +25,36 @@ export const ListPokemons = () => {
   }
   
   const handleNextPage = async() => {
-    if (numberPage <= totalPage.length - 1 ) {
-      await setNumberPage( numberPage + 1)
+    if (parseInt(numberPage) <= totalPage.length - 1 ) {
+      const nextPage = parseInt(numberPage) + 1;
+      await setNumberPage( nextPage)
+      await navigate(`/pokedex/${nextPage}`, {
+        replace: true
+      })
+      window.location.reload()
       window.scrollTo({
         top:0,
-        behavior: 'smooth'
       })
     }
   }
 
-  const handleBackPage = () => {
-    if (numberPage > totalPage.length) {
-      setNumberPage( numberPage - 1)
-      window.scrollTo({
-        top:0,
-        behavior: 'smooth'
-      })
+  const handleBackPage = async() => {
+    if (parseInt(numberPage) > 1) {
+      const previousPage = parseInt(numberPage) - 1;
+      setNumberPage(previousPage);
+      navigate(`/pokedex/${previousPage}`, {
+        replace: true
+      });
+      window.location.reload();
     }
   }
+
   const handleSelectPage = async(page) => {
     if ( page >= 1 && page <= totalPage.length ) {
-      await setNumberPage( page )
-      window.scrollTo({
-        top:0,
-        behavior: 'smooth'
+      await navigate(`/pokedex/${page}`, {
+        replace: true
       })
+      window.location.reload()
     }
   }
 
