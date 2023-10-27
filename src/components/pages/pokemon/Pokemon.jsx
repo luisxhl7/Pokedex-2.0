@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import pokeball from '../../../assets/pokeball.png'
 import './Pokemon.scss'
+import { InfoPokemon } from '../../molecules/info-pokemon/InfoPokemon'
 
 export const Pokemon = () => {
   const [pokemon, setPokemon] = useState()
@@ -35,30 +36,12 @@ export const Pokemon = () => {
               pokemon?.sprites?.other?.dream_world?.front_default 
               :
               pokeball
-              } alt="" width={250} height={250}
+              } alt=""
             />
           </figure>
           
         </div>
-        <h2 className='pokemon__card-info__title-type'>Tipo</h2>
-        <div className='pokemon__card-info__type'>
-          {pokemon?.types?.map( (item, index) => (
-            <p key={index} className='pokemon__card-info__type__text'>
-            {item?.type?.name} 
-            </p>
-          ))}
-        </div>
-        <h2 className='pokemon__card-info__title-skills'>Habilidades</h2>
-        {pokemon?.stats?.map( (item, index) => (
-          <div className='pokemon__card-info__ability' key={index}>
-            <p className='pokemon__card-info__ability__name'>
-              {item?.stat?.name}
-            </p>
-            <p className='pokemon__card-info__ability__stat'>
-              {item?.base_stat} 
-            </p>
-          </div>
-        ))}
+        <InfoPokemon types={pokemon?.types} stats={pokemon?.stats}/>
 
       </div>
     </section>

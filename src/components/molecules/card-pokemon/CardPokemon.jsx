@@ -27,7 +27,7 @@ export const CardPokemon = ({name, url, id}) => {
     <div className='cardPokemon'>
       <Link to={`/pokemon/${name}`}>
         <h2>
-          # {pokemon?.order}
+          # {pokemon?.id}
           <br />
           {pokemon?.name}
         </h2>

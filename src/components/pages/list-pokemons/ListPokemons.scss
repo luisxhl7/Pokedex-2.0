@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-top: 80px;
     &__content{
         display: flex;
         flex-direction: row;
@@ -25,7 +26,7 @@
             justify-content: center;
         }
         & .--actived{
-            background-color: red;
+            background-color: #bd1212;
         }
     }
 }

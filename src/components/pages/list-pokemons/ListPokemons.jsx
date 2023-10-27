@@ -10,7 +10,7 @@ export const ListPokemons = () => {
   const [numberPage, setNumberPage] = useState(page)
   const [totalPage, setTotalPage] = useState()
   const navigate = useNavigate();
-  console.log(totalPage)
+  
   const getPokemons = async(pageNumber) => {
     try {
       const offset = (pageNumber - 1 ) * 100;
