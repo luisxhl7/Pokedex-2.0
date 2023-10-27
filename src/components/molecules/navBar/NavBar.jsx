@@ -7,7 +7,7 @@ export const NavBar = () => {
   return (
     <nav className='navbar'>
       <img src={pokeball} alt="" width={40}/>
-      <NavLink to='/pokedex'>pokedex</NavLink>
+      <NavLink to='/pokedex'>Pokedex</NavLink>
     </nav>
   )
 }

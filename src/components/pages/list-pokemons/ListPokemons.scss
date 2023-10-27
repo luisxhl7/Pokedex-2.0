@@ -11,4 +11,21 @@
         justify-content: center;
         align-items: center;
     }
+    &__content-buttons{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px 20px 20px;
+        & button{
+            width: 30px;
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .--actived{
+            background-color: red;
+        }
+    }
 }

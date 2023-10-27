@@ -10,7 +10,7 @@ export const ListPokemons = () => {
   const [numberPage, setNumberPage] = useState(page)
   const [totalPage, setTotalPage] = useState()
   const navigate = useNavigate();
-
+  console.log(totalPage)
   const getPokemons = async(pageNumber) => {
     try {
       const offset = (pageNumber - 1 ) * 100;
@@ -62,6 +62,7 @@ export const ListPokemons = () => {
     getPokemons(numberPage)
   }, [numberPage])
 
+
   return (
     <section className='listPokemons'>
       
@@ -78,14 +79,19 @@ export const ListPokemons = () => {
         }
       </div>
 
-      <button onClick={handleBackPage}>{'<'}</button>
-      {totalPage?.map( (item, idx) => (
-        <button
-          key={ 1 + idx} 
-          onClick={() => handleSelectPage(1 + idx)}
-        >{1 + idx}</button>
-      ))}
-      <button onClick={handleNextPage}>{'>'}</button>
+      <div className='listPokemons__content-buttons'>
+        <button onClick={handleBackPage}>{'<'}</button>
+          {
+            totalPage?.map( (item, idx) => (
+              <button
+              key={ 1 + idx} 
+              onClick={() => handleSelectPage(1 + idx)}
+              className={`${parseInt(numberPage) === 1 + idx ? '--actived' : ''}`}
+              >{1 + idx}</button>
+          ))
+        }
+        <button onClick={handleNextPage}>{'>'}</button>
+      </div>
     
     </section>
   )
