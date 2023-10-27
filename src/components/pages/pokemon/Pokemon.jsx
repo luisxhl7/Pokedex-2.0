@@ -26,26 +26,29 @@ export const Pokemon = () => {
   return (
     <section className='pokemon'>
       <div className='pokemon__card-info'>
-        <h1>{pokemon?.name}</h1>
-        <figure>
-          <img src={
-            pokemon?.sprites?.other?.dream_world?.front_default 
-            ?
-            pokemon?.sprites?.other?.dream_world?.front_default 
-            :
-            pokeball
-            } alt="" width={250} height={250}
-          />
-        </figure>
-        <p>tipo</p>
+        <div className='pokemon__card-info__section-1'>
+          <h1 className='pokemon__card-info__title'>{pokemon?.name}</h1>
+          <figure>
+            <img src={
+              pokemon?.sprites?.other?.dream_world?.front_default 
+              ?
+              pokemon?.sprites?.other?.dream_world?.front_default 
+              :
+              pokeball
+              } alt="" width={250} height={250}
+            />
+          </figure>
+          
+        </div>
+        <h2 className='pokemon__card-info__title-type'>Tipo</h2>
         <div className='pokemon__card-info__type'>
           {pokemon?.types?.map( (item, index) => (
-            <p key={index}>
+            <p key={index} className='pokemon__card-info__type__text'>
             {item?.type?.name} 
             </p>
           ))}
         </div>
-        <p>habilidades</p>
+        <h2 className='pokemon__card-info__title-skills'>Habilidades</h2>
         {pokemon?.stats?.map( (item, index) => (
           <div className='pokemon__card-info__ability' key={index}>
             <p className='pokemon__card-info__ability__name'>
