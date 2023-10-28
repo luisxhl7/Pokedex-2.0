@@ -9,6 +9,7 @@
     justify-content: space-evenly;
     background-color: #2f2f2f;
     height: 100vh;
+    padding-top: 100px;
     @include FromMax(580px) {
         display: flex;
         flex-direction: column;
