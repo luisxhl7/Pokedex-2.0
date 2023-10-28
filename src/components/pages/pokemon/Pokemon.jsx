@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import pokeball from '../../../assets/pokeball.png'
+import incognito from '../../../assets/incognito.svg'
 import { InfoPokemon } from '../../molecules/info-pokemon/InfoPokemon'
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import './Pokemon.scss'
@@ -66,7 +66,7 @@ export const Pokemon = () => {
               ?
               pokemon?.sprites?.other?.dream_world?.front_default 
               :
-              pokeball
+              incognito
               } alt=""
             />
           </figure>

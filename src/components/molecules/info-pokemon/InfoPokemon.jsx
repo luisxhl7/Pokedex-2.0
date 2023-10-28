@@ -15,7 +15,7 @@ const Text = ({ className, url }) => {
     
     return (
         <p className={className}>
-            {text}
+            {text ? text : '???'}
         </p>
     )
 }
@@ -43,7 +43,7 @@ export const InfoPokemon = ({types, stats}) => {
                         url={item?.stat?.url}
                     />
                     <p className='pokemon__card-info__ability__stat'>
-                    {item?.base_stat} 
+                    {item?.base_stat ? item?.base_stat : '???'} 
                     </p>
                 </div>
             ))}
