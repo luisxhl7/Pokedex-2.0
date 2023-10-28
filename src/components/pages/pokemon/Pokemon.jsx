@@ -22,7 +22,7 @@ export const Pokemon = () => {
 
   const handleBackPokemon = async() => {
     const backPokemon = pokemon?.id - 1
-    if (backPokemon > 1) {
+    if (backPokemon >= 1) {
       const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${backPokemon}`)
       await navigate(`/pokemon/${result?.data?.name}`, {
         replace: true
