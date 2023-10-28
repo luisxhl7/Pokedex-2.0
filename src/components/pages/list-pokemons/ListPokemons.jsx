@@ -10,7 +10,7 @@ export const ListPokemons = () => {
   const navigate = useNavigate();
   const {page} = useParams()
   const [formData, setFormData] = useState({});
-  const [successSearch, setSuccessSearch] = useState();
+  const [successSearch, setSuccessSearch] = useState(true);
   const [pokemons, setPokemons] = useState()
   const [numberPage, setNumberPage] = useState(page)
   const [totalPage, setTotalPage] = useState()
