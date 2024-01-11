@@ -97,7 +97,7 @@ export const ListPokemons = () => {
           name="pokemon"
           className='listPokemons__input'
           onChange={handleChange}
-          placeholder='Busca por numero o nombre'
+          placeholder='Busca por número o nombre'
         />      
       </form>
 

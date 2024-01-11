@@ -10,6 +10,8 @@
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
+    overflow: hidden;
+
     &:hover{
         & img{
             filter: none;
@@ -21,7 +23,7 @@
     }
     & h2{
         color: #fff;
-        width: 95%;
+        width: 170px;
         margin-bottom: 20px;
         overflow: hidden;
         text-overflow: ellipsis;
