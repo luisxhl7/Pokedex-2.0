@@ -10,10 +10,22 @@
     padding-top: 80px;
     &__input{
         border: none;
-        width: 300px;
+        width: 200px;
+        @include FromMin($large) {
+            width: 300px;
+        }
+    }
+    
+    &__content-search{
         padding: 10px 10px;
         border-radius: 15px;
-        margin: 30px 0px;
+        margin: 15px 0px 30px;
+        background-color: #ffffff;
+        display: flex;
+        &__icon-search{
+            color: #000000;
+            margin: 0px 10px 0px 0px;
+        }
     }
 
     &__content{
@@ -63,4 +75,5 @@
             }
         }
     }
+
 }

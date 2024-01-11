@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { CardPokemon } from '../../molecules/card-pokemon'
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import { ArrowBackIos, ArrowForwardIos, Search } from '@mui/icons-material';
 import pikachu from '../../../assets/pika-triste.svg'
 import './ListPokemons.scss'
 
@@ -92,13 +92,16 @@ export const ListPokemons = () => {
     <section className='listPokemons'>
       
       <form onSubmit={handleSearchPokemon}>
-        <input
-          type="search"
-          name="pokemon"
-          className='listPokemons__input'
-          onChange={handleChange}
-          placeholder='Busca por número o nombre'
-        />      
+        <div className='listPokemons__content-search'>
+          <Search className='listPokemons__content-search__icon-search'/>
+          <input
+            type="search"
+            name="pokemon"
+            className='listPokemons__input'
+            onChange={handleChange}
+            placeholder='Busca por número o nombre'
+          />      
+        </div>
       </form>
 
       <div className='listPokemons__content'>
