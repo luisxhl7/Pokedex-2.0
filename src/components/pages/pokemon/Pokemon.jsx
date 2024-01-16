@@ -13,6 +13,14 @@ export const Pokemon = () => {
   const [isLoad, setIsLoad] = useState(false)
   const {id} = useParams()
 
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const getPokemon = async() => {
     try {
       setIsLoad(true)
@@ -46,6 +54,21 @@ export const Pokemon = () => {
       window.location.reload()
     }
   }
+
+  const handleKeyDown = (event) => {
+    switch (event.key) {
+      case 'ArrowLeft':
+        console.log('izquierda');
+        // handleBackPokemon()
+      break;
+      case 'ArrowRight':
+        console.log('derecha');
+        handleNextPokemon()
+        break;
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     getPokemon();
