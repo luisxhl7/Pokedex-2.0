@@ -70,9 +70,15 @@ export const InfoPokemon = ({types, stats, isLoad}) => {
                                     className='pokemon__card-info__ability__name' 
                                     url={item?.stat?.url}
                                 />
-                                <p className='pokemon__card-info__ability__stat'>
-                                    {item?.base_stat ? item?.base_stat : '???'} 
-                                </p>
+                                <div className='pokemon__card-info__ability__content'>
+                                    <div className='pokemon__card-info__ability__stat' style={{ width: `${item?.base_stat}px` }}>
+                                        <p>
+                                            {item?.base_stat ? item?.base_stat : '???'} 
+                                        </p>
+
+                                    </div>
+
+                                </div>
                             </div>
                         ))
                     }

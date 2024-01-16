@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     background-color: #2f2f2f;
-    height: calc(100vh - 60px);
+    height: 100vh;
     @include FromMax(580px) {
         display: flex;
         flex-direction: column;
@@ -20,7 +20,7 @@
         background-size: contain;
         background-position: -130px -150px;
         padding: 30px 0px;
-        margin-top:  30px;
+        margin-top: 50px;
         width: 100%;
         max-width: 400px;
         background-color: #bd1212;
@@ -115,21 +115,7 @@
             color: #ffffff;
             text-align: center;
         }
-        &__ability{
-            width: 300px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            &__name{
-                text-transform: capitalize;
-                color: #ffffff;
-            }
-            &__stat{
-                color: #ffffff;
-            }
-        }
+
     }
     &__button{
         display: none;
