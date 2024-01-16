@@ -91,11 +91,11 @@ export const ListPokemons = () => {
   return (
     <section className='listPokemons'>
       
-      <form onSubmit={handleSearchPokemon}>
+      <form onSubmit={handleSearchPokemon} autoComplete='off'>
         <div className='listPokemons__content-search'>
           <Search className='listPokemons__content-search__icon-search'/>
           <input
-            type="search"
+            type="text"
             name="pokemon"
             className='listPokemons__input'
             onChange={handleChange}

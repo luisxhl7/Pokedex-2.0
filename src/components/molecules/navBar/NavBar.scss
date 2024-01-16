@@ -5,17 +5,31 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: row;
     z-index: 99;
+    top: 0px;
     & img{
-        margin: 0px -9px 0px 10px;
+        margin: 0px 0px 0px 10px;
     }
     & a{
         font-size: 25px;
         font-weight: bolder;
-        margin: 0px 10px;
+        margin: 0px 10px 0px 0px;
         text-decoration: none;
         color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button-view-pokemons{
+        background-color: transparent;
+        color: #ffffff;
+        width: auto;
+        display: flex;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 15px;
     }
 }

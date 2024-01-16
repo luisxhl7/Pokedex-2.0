@@ -32,21 +32,32 @@ export const CardPokemon = ({name, url, id}) => {
     <div className='cardPokemon'>
       <Link to={`/pokemon/${name}`}>
         <h2>
-          # {isLoad? '????' : pokemon?.id}
+          #{isLoad? '????' : pokemon?.id}
           <br />
           {isLoad? '???????' :pokemon?.name}
         </h2>
         <figure>
           {isLoad ?
-            <img src={pokeball} alt="" width={150} height={150}/>
+            <img 
+              src={pokeball} 
+              alt="pokeball" 
+              width={150} 
+              height={150}
+              className={`cardPokemon__pokeLoad ${JSON.parse(localStorage.getItem('viewPokemons')) ? '--view-pokemons' : ''}`}
+            />
             :
             <img src={
-              pokemon?.sprites?.other?.dream_world?.front_default 
-              ?
-              pokemon?.sprites?.other?.dream_world?.front_default 
-              :
-              incognito
-            } alt="" width={150} height={150}/>
+                pokemon?.sprites?.other?.dream_world?.front_default 
+                ?
+                pokemon?.sprites?.other?.dream_world?.front_default 
+                :
+                incognito
+              } 
+              alt="pokemom" 
+              width={150} 
+              height={150}
+              className={`cardPokemon__pokemon ${JSON.parse(localStorage.getItem('viewPokemons')) ? '--view-pokemons' : ''}`}
+            />
           }
         </figure>
       </Link>

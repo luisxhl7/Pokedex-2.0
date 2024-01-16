@@ -8,8 +8,7 @@
     align-items: center;
     justify-content: center;
     background-color: #2f2f2f;
-    height: 100vh;
-    padding-top: 100px;
+    height: calc(100vh - 60px);
     @include FromMax(580px) {
         display: flex;
         flex-direction: column;
@@ -41,15 +40,16 @@
         &__section-1{
             background-color: #ffffffe0;
             width: 90%;
+            height: 410px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             border-radius: 15px;
             @include FromMin($large) {
                 max-width: 350px;
             }
-            & img{
+            &__image{
                 width: 250px;
                 height: 250px;
                 @include FromMin($large) {
@@ -57,10 +57,41 @@
                     height: 350px;
                 }
             }
+            &__image-load{
+                width: 200px;
+                height: 200px;
+                animation-name: loadPokemon;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+
+
+                @keyframes loadPokemon {
+                    0% {
+                        transform: rotate(-30deg);
+                    }
+                    100% {
+                        transform: rotate(30deg);
+                    }
+                    // 100% {
+                    //     transform: rotate(0deg);
+                    // }
+                }
+                @include FromMin($large) {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
         }
 
         &__title{
-            font-size: 40px;
+            font-size: 25px;
+            text-align: center;
+            width: 80%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             text-align: center;
         }
         &__title-type{

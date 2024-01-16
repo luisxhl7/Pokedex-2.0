@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 20px;
     &__input{
         border: none;
         width: 200px;
@@ -76,4 +76,10 @@
         }
     }
 
+}
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: red !important;
+    color: fieldtext !important;
 }
