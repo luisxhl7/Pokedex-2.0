@@ -8,11 +8,12 @@
     align-items: center;
     justify-content: center;
     background-color: #2f2f2f;
-    height: 100vh;
+    height: 90vh;
     @include FromMax(580px) {
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100vh;
     }
     &__card-info{
         background-image: url(../../../assets/pokeball.png);
