@@ -55,9 +55,13 @@ export const InfoPokemon = ({types, stats, isLoad}) => {
                         <p className='pokemon__card-info__ability__name'>
                             ???
                         </p>
-                        <p className='pokemon__card-info__ability__stat'>
-                            ???
-                        </p>
+                        <div className='pokemon__card-info__ability__content'>
+                            <div className='pokemon__card-info__ability__stat'>
+                                <p >
+                                    ???
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 ))
                 :

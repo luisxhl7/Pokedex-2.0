@@ -1,0 +1,40 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.CardButtonPokemon{
+    margin: 10px 10px;
+    background-color: rgb(138, 138, 138);
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    width: 170px;
+    @include FromMax($large) {
+        width: 135px;
+    }
+    &:hover{
+        background-color: rgb(175, 175, 175);
+    }
+    & a{
+        text-decoration: none;
+    
+    }
+    & h3{
+        text-align: center;
+        color: white;
+        width: 100%;
+        margin-bottom: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    &__image{
+        width: 150px;
+        height: 150px;
+        @include FromMax($large) {
+            width: 110px;
+            height: 110px;
+        }
+    }
+}
